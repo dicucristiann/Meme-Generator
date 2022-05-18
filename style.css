@@ -93,8 +93,11 @@ body:before {
 }
 
 
-/* CSS  for btn*/
-.btn, a {
+.download {
+margin-bottom: 10px;
+
+}
+.btn, .download, .upload, a {
   
   background-color: #fff;
   background-image: none;

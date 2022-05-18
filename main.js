@@ -3,6 +3,8 @@ const canvas = document.querySelector("#meme");
 const topTextInput = document.querySelector("#topTextInput");
 const bottomTextInput = document.querySelector("#bottomTextInput");
 
+
+
 let image;
 
 imageFileInput.addEventListener("change", (e) => {
@@ -37,7 +39,7 @@ function updateMemeCanvas(canvas, image, topText, bottomText) {
   const ctx = canvas.getContext("2d");
   const width = image.width;
   const height = image.height;
-  const fontSize = Math.floor(width / 10);
+  const fontSize = Math.floor(width / 15);
   const yOffset = height / 25;
 
   // Update canvas background
@@ -63,3 +65,15 @@ function updateMemeCanvas(canvas, image, topText, bottomText) {
   ctx.strokeText(bottomText, width / 2, height - yOffset);
   ctx.fillText(bottomText, width / 2, height - yOffset);
 }
+
+
+//Save image function
+
+let saveBtn = document.getElementById('save')
+saveBtn.addEventListener('click', function(){
+    let data = canvas.toDataURL()
+    let link = document.createElement('a')
+    link.href = data
+    link.download = 'image.png'
+    link.click()
+})
